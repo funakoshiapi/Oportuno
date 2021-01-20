@@ -1,4 +1,9 @@
-# Oportuno
+# Oportuno API
+
+tecnologias em uso:
+  - C#
+  - ASP.NET
+  - Postman
 
 
 Code Base para API do "Oportuno APP"
