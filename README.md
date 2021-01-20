@@ -18,7 +18,7 @@ API realizara CRUD, sendo o mediador entre o phone app e os recursos no web serv
 
 
 # Recursos para estudar
-https://docs.oracle.com/cd/E50612_01/doc.11122/oauth_guide/content/oauth_intro.html
-https://www.youtube.com/watch?v=fmvcAzHpsk8
-https://azure.microsoft.com/en-us/services/cosmos-db/
-https://www.tutorialsteacher.com/webapi/web-api-tutorials
+- https://docs.oracle.com/cd/E50612_01/doc.11122/oauth_guide/content/oauth_intro.html
+- https://www.youtube.com/watch?v=fmvcAzHpsk8
+- https://azure.microsoft.com/en-us/services/cosmos-db/
+- https://www.tutorialsteacher.com/webapi/web-api-tutorials
