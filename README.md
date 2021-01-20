@@ -1,6 +1,6 @@
 # Oportuno API
 
-tecnologias em uso:
+Tecnologias em uso:
   - C#
   - ASP.NET
   - Postman
