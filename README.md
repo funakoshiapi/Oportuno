@@ -7,12 +7,12 @@ Code Base para API do "Oportuno APP"
 
 API realizara CRUD, sendo o mediador entre o phone app e os recursos no web server
 
-Arquitetura do API :
+# Arquitetura do API :
 
 ![Test Image 1](ARCHITECTURE.PNG)
 
 
-Modelo de autorizacao oauth 2:
+# Modelo de autorizacao oauth 2:
 
 ![Test Image 2](oauth_gateway.png)
 
