@@ -27,3 +27,8 @@ API realizara CRUD, sendo o mediador entre o phone app e os recursos no web serv
 - https://www.youtube.com/watch?v=fmvcAzHpsk8
 - https://azure.microsoft.com/en-us/services/cosmos-db/
 - https://www.tutorialsteacher.com/webapi/web-api-tutorials
+
+# Livros:
+
+- Hands-On RESTful Web Services with ASP.NET Co… (Paperback)by Resca, Samuele
+- The Complete ASP.NET Core 3 API Tutorial: Hands-On Building, Testing, and Deploying 1st ed. Edition
