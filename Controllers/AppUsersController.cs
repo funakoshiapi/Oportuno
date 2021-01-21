@@ -10,7 +10,14 @@ namespace Oportuno.Contollers
     [ApiController]
     public class AppUsersController : ControllerBase
     {
-        private  readonly MockOportunoRepo _repository = new MockOportunoRepo();
+        private readonly IOportunoRepo _repository;
+
+        // this constructor is resiving the value that is being injected by the dependency injection system
+        public AppUsersController(IOportunoRepo repository)
+        {
+            _repository = repository; // Dependency injected value is being assigned to _repository
+        }
+        //private  readonly MockOportunoRepo _repository = new MockOportunoRepo();
         
         //Get api/AppUser
         [HttpGet]
