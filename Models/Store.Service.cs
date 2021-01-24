@@ -1,9 +1,11 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Oportuno.Models
 {
     public partial class Store
     {
+        [Required]
         public enum ServiceType
         {
             None,

@@ -28,7 +28,7 @@ namespace Oportuno
         public void ConfigureServices(IServiceCollection services)
         {   
 
-
+            // Registers services to enable the use of “Controllers” throughout our application
             services.AddControllers();
 
             services.AddScoped<IOportunoRepo, MockOportunoRepo>();
