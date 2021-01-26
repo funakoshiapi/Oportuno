@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Oportuno.Models;
+using Oportuno.Entities;
 
 namespace Oportuno.Data
 {   //Funakoshi Silva
@@ -7,9 +7,9 @@ namespace Oportuno.Data
     public interface IOportunoRepo
     {
         Store GetStoreById(int id);
-        AppUser GetAppUserById (int id);
-        IEnumerable<Store> GetAppStores();
-        IEnumerable<AppUser> GetAppUsers();
+        User GetUserById (int id);
+        IEnumerable<Store> GetAllStores();
+        IEnumerable<User> GetAllUsers();
     }
 
 

@@ -1,39 +1,51 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Oportuno.Models;
+using Oportuno.Entities;
 using Oportuno.Data;
+using System;
+using AutoMapper;
 
 namespace Oportuno.Contollers
 {   
     
-    [Route("api/AppUser")]
+    [Route("api/user")]
     [ApiController]
-    public class AppUsersController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IOportunoRepo _repository;
+        private readonly IOportunoRepo _userRepository;
+        private readonly IMapper _mapper;
 
         // this constructor is resiving the value that is being injected by the dependency injection system
-        public AppUsersController(IOportunoRepo repository)
+        public UserController(IOportunoRepo userRepository, IMapper mapper)
         {
-            _repository = repository; // Dependency injected value is being assigned to _repository
+            _userRepository = userRepository ??
+                throw new ArgumentNullException(nameof(userRepository));
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
         }
-        //private  readonly MockOportunoRepo _repository = new MockOportunoRepo();
+      
         
-        //Get api/AppUser
+        //Get api/user
         [HttpGet]
-        public ActionResult < IEnumerable<AppUser> > GetAllAppUsers()
+        public ActionResult < IEnumerable<User> > GetAllUsers()
         {
-            var appUsers = _repository.GetAppUsers();
+            var User = _userRepository.GetAllUsers();
 
-            return Ok(appUsers);
+            return Ok(User);
         }
-        //Get api/AppUser/{id}
-        [HttpGet("{id}")]
-        public ActionResult <IEnumerable<AppUser> > GetAllAppUserById(int id)
-        {
-            var appUser = _repository.GetAppUserById(id);
 
-            return Ok(appUser);
+        //Get api/User/{id}
+        [HttpGet("{userId}")]
+        public ActionResult <IEnumerable<User> > GetUserById(int userId)
+        {
+            var user = _userRepository.GetUserById(userId);
+
+            if(user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
 

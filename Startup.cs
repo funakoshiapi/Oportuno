@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,9 +30,15 @@ namespace Oportuno
         {   
 
             // Registers services to enable the use of “Controllers” throughout our application
-            services.AddControllers();
+            services.AddControllers(setupAction =>
+            {
+                setupAction.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();
 
             services.AddScoped<IOportunoRepo, MockOportunoRepo>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Oportuno", Version = "v1" });

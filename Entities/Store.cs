@@ -1,6 +1,8 @@
+using Oportuno.Entities;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Oportuno.Models
+namespace Oportuno.Entities
 {
     public partial class Store
     {
@@ -28,7 +30,15 @@ namespace Oportuno.Models
         public string Image {get; set;}
 
         [Required]
+        public string AboutMe { get; set; }
+
+        
+        [Required]
         public ServiceType StoreService{get; set;}
+
+        // represent list of store workers
+        public ICollection<StoreStuff> Stuff { get; set; }
+            = new List<StoreStuff>();
     }
 
 }

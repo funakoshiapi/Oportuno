@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Oportuno.Models
+namespace Oportuno.Entities
 {
-    public class AppUser
+    public class User
     {
         [Key]
         [Required]
@@ -23,6 +23,9 @@ namespace Oportuno.Models
         [Required]
         [MaxLength(250)]
         public string Phone {get; set;}
+
+        [MaxLength(250)]
+        public string AboutMe { get; set; }
 
         public string Image {get; set;}
     }
